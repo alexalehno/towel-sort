@@ -1,6 +1,13 @@
+module.exports = function towelSort(matrix) {
+    if (!matrix) return [];
 
-// You should implement your task here.
+    let arrClone = [...matrix];
+    let res = [];
 
-module.exports = function towelSort (matrix) {
-  return [];
-}
+    arrClone.forEach((el, i) => {
+        if (i % 2 === 0) res.push(...el);
+        else res.push(...el.reverse());
+    });
+
+    return res;
+};
